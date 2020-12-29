@@ -8,11 +8,9 @@ Available on [Docker hub](https://hub.docker.com/r/fredblgr/3asl)
 
 The source files are available on [GitHub](https://github.com/Frederic-Boulanger-UPS/docker-3asl).
 
-Typical usage is:
+There is also a Vagrant VM with the same software installed.
 
-```
-docker run --rm -it -v "$(PWD):/workspace:rw" --name 3asl2020 --env="DISPLAY=host.docker.internal:0" fredblgr/3asl:2020
-```
+The ```docker-dist```and ```vagrant-dist``` folders contain files to help the deployment of the docker image and the Vagrant VM.
 
 GUI
 -----
@@ -21,7 +19,7 @@ For programs with a GUI (such as ```why3 ide```), you will need an X11 server ru
 Shared directory
 ----------------
 
-To avoid modifying the image, you should store your documents in ```/workspace```, which is where the current directory is mounted thanks to the ```-v```option. The ```--rm```option removes the container when you exit the shell.
+To have persistent data, you should store your documents in ```/workspace``` (Docker) or ```/home/vagrant/workspace```(Vagrant), which is where the current directory is mounted.
 
 License
 ==================

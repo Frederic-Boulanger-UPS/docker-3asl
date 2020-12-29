@@ -1,7 +1,11 @@
 FROM ubuntu:20.04
 
+# Avoid prompts for time zone
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
+
+# Fix issue with libGL on Windows
+ENV LIBGL_ALWAYS_INDIRECT=1
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -40,8 +44,3 @@ RUN echo "deb https://dl.bintray.com/souffle-lang/deb-unstable bionic main" | te
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
 RUN apt-get update
 RUN apt-get install -y souffle
-
-RUN # Append line to .profile in order to fix libGL issue on Windows
-RUN echo "" >> /root/.profile
-RUN echo "# Fix issue with libGL on Windows" >> /root/.profile
-RUN echo 'export LIBGL_ALWAYS_INDIRECT=1' >> /root/.profile

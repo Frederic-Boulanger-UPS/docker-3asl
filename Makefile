@@ -6,14 +6,14 @@ VM   = 3asl
 TAG  = 2020
 
 help:
-	echo "# Available targets:"
-	echo "#   - build: build docker image"
-	echo "#   - clean: clean docker build cache"
-	echo "#   - run: run docker container"
-	echo "#   - push: push docker image to docker hub"
-	echo "#   - vm: build vagrant virtual machine"
-	echo "#   - ssh: connect to vagrant virtual machine"
-	echo "#   - box: package vagrant virtual machine for distribution"
+	@echo "# Available targets:"
+	@echo "#   - build: build docker image"
+	@echo "#   - clean: clean docker build cache"
+	@echo "#   - run: run docker container"
+	@echo "#   - push: push docker image to docker hub"
+	@echo "#   - vm: build vagrant virtual machine"
+	@echo "#   - ssh: connect to vagrant virtual machine"
+	@echo "#   - box: package vagrant virtual machine for distribution"
 
 # Build image
 build:

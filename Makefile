@@ -18,7 +18,10 @@ help:
 # Build image
 build:
 	docker build -t $(REPO)$(IMAGE):$(TAG) .
-	docker rmi $$(docker images --filter "dangling=true" -q)
+	@danglingimages=$$(docker images --filter "dangling=true" -q); \
+	if [[ $$danglingimages != "" ]]; then \
+	  docker rmi $$(docker images --filter "dangling=true" -q); \
+	fi
 
 vm:
 	vagrant up

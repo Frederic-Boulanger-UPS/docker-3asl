@@ -44,3 +44,5 @@ RUN echo "deb https://dl.bintray.com/souffle-lang/deb-unstable bionic main" | te
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
 RUN apt-get update
 RUN apt-get install -y souffle
+
+RUN apt autoremove && apt autoclean

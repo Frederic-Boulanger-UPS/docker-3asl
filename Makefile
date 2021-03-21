@@ -43,7 +43,7 @@ run:
 	docker run --rm -it \
 		-v ${PWD}:/workspace:rw \
 		--name $(IMAGE) \
-		--env="DISPLAY=host.docker.internal:0" \
+		--env "DISPLAY=host.docker.internal:0" \
 		$(REPO)$(IMAGE):$(TAG)
 
 push:
